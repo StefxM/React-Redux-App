@@ -1,13 +1,14 @@
 import { FETCH_PHOTO_START, FETCH_PHOTO_SUCCESS, FETCH_PHOTO_FAIL } from '../actions/actions';
 
 const initialState = {
-    photo: [],
+    url: [],
     error: '',
     isFetching: false
 };
 
-function reducer( state = initialState, action) {
-    console.log('reducer', action);
+export const reducer = ( state = initialState, action) => {
+    //console.log('reducer', action);
+    //console.log(state);
     switch (action.type) {
         case FETCH_PHOTO_START:
             return {
@@ -18,7 +19,7 @@ function reducer( state = initialState, action) {
         case FETCH_PHOTO_SUCCESS:
             return {
                 ...state,
-                photo: action.payload,
+                url: action.payload.url,
                 isFetching: false,
                 error: ''
             };
@@ -32,4 +33,3 @@ function reducer( state = initialState, action) {
     }
 }
 
-export default reducer;

@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from "./components/card";
+import PhotoCard from "./components/photoCard";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Card/>
+      <PhotoCard/>
     </div>
   );
 }

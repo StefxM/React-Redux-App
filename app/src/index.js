@@ -1,13 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { Provider } from "react-redux";
+import { reducer} from "./reducer/reducer";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import PhotoCard from "./components/photoCard";
+
+const logger = () => next => action => {
+  console.log("Dispatching action:", action);
+  next(action);
+};
+
+const store = createStore(reducer, applyMiddleware(logger, thunk));
+
+
+function App() {
+  return (
+    <div className="App">
+      <PhotoCard/>
+    </div>
+  );
+}
+
+
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
