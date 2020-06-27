@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { reducer} from "./reducer/reducer";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import PhotoCard from "./components/photoCard";
+import PhotoCard from "./components/PhotoCard";
 
 const logger = () => next => action => {
   console.log("Dispatching action:", action);

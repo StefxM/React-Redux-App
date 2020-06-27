@@ -11,6 +11,8 @@ const PhotoCard = ({ getPhoto, url, isFetching, error }) => {
     return (
         <div>
             <img src={url} alt="api call pic"/>
+            <h2>{author}</h2>
+
         </div>
     );
 };
@@ -18,6 +20,7 @@ const PhotoCard = ({ getPhoto, url, isFetching, error }) => {
 const mapStateToProps = state => {
     return {
         photo: state.url,
+        author:state.author,
         isFetching: state.isFetching,
         error: state.error
     };

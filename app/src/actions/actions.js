@@ -20,7 +20,7 @@ export const getPhoto = () => dispatch => {
         })
             .catch(err => {
                 console.log(err);
-                dispatch({
+                dispatch({   
                     type: FETCH_PHOTO_FAIL, payload:err
                 });
             });

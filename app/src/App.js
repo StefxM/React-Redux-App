@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoCard from "./components/photoCard";
+import PhotoCard from "./components/PhotoCard";
 import './App.css';
 
 function App() {

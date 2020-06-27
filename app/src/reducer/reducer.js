@@ -2,6 +2,7 @@ import { FETCH_PHOTO_START, FETCH_PHOTO_SUCCESS, FETCH_PHOTO_FAIL } from '../act
 
 const initialState = {
     url: [],
+    author:'',
     error: '',
     isFetching: false
 };
