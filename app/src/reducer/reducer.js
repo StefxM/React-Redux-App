@@ -1,8 +1,7 @@
 import { FETCH_PHOTO_START, FETCH_PHOTO_SUCCESS, FETCH_PHOTO_FAIL } from '../actions/actions';
 
 const initialState = {
-    url: [],
-    author:'',
+    photo: [],
     error: '',
     isFetching: false
 };
@@ -20,7 +19,7 @@ export const reducer = ( state = initialState, action) => {
         case FETCH_PHOTO_SUCCESS:
             return {
                 ...state,
-                url: action.payload.url,
+                photo: action.payload,
                 isFetching: false,
                 error: ''
             };
